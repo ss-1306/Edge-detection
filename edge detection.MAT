@@ -1,0 +1,24 @@
+clc
+clear all
+close all
+warning off
+c=webcam;
+x=c.snapshot;
+imshow(x);
+clear c;
+a=rgb2gray(x);
+subplot(2,2,1);
+imshow(x);
+title('Original Image');
+subplot(2,2,2);
+w=edge(a,'sobel');
+imshow(w);
+title('Sobel Operation');
+subplot(2,2,3);
+w=edge(a,'prewitt');
+imshow(w);
+title('Prewitt Operation');
+subplot(2,2,4);
+w=edge(a,'canny');
+imshow(w);
+title('Canny Operation');
